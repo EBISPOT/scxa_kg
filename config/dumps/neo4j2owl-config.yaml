@@ -36,8 +36,19 @@ curie_map:
   pato_rel: http://purl.obolibrary.org/obo/pato#
   so_rel: http://purl.obolibrary.org/obo/so#
   ro_rel: http://www.obofoundry.org/ro/ro.owl#
+  chebi_rel: http://purl.obolibrary.org/obo/chebi#
+  ceph_rel: http://purl.obolibrary.org/obo/ceph#
+  sponge_rel: http://purl.obolibrary.org/obo/sponge#
+  pr_rel: http://purl.obolibrary.org/obo/pr#
+  nbo_rel: http://purl.obolibrary.org/obo/nbo#
+  uberon_rel: http://purl.obolibrary.org/obo/uberon/core#
   owl: http://www.w3.org/2002/07/owl#
   skos: http://www.w3.org/2004/02/skos/core#
+  dcterms: http://purl.org/dc/terms/
+  dc: http://purl.org/dc/elements/1.1/
+  oboInOwl: http://www.geneontology.org/formats/oboInOwl#
+  sssom: https://w3id.org/sssom/
+  semapv: https://w3id.org/semapv/vocab/
   ensembl: http://identifiers.org/ensembl/
   RO: http://purl.obolibrary.org/obo/RO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
@@ -49,6 +60,19 @@ curie_map:
   SO: http://purl.obolibrary.org/obo/SO_
   OBI: http://purl.obolibrary.org/obo/OBI_
   PCL: http://purl.obolibrary.org/obo/PCL_
+  DMBA: https://purl.brain-bican.org/ontology/dmbao/DMBA_
+  DHBA: https://purl.brain-bican.org/ontology/dhbao/DHBA_
+  HBA: https://purl.brain-bican.org/ontology/hbao/HBA_
+  FBgn: http://flybase.org/reports/FBgn
+  PBA: https://purl.brain-bican.org/ontology/pbao/PBA_
+  MBA: https://purl.brain-bican.org/ontology/mbao/MBA_
+  cgnc: http://birdgenenames.org/cgnc/GeneReport?id=
+  SIO: http://semanticscience.org/resource/SIO_
+  EFO: http://www.ebi.ac.uk/efo/EFO_
+  foaf: http://xmlns.com/foaf/0.1/
+  doap: http://usefulinc.com/ns/doap#
+  
+
 
 filters:
   solr:
