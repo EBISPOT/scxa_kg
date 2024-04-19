@@ -1,1 +1,2 @@
 http://purl.obolibrary.org/obo/uberon/composite-metazoan-basic.owl
+https://raw.githubusercontent.com/EBISPOT/scxa_2_cxg/main/efo_slice.owl
