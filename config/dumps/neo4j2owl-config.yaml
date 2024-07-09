@@ -17,10 +17,12 @@ neo_node_labelling:
   - classes:
       - CL:0000000
     label: Cell
-#   - classes:
-#       - CL:0011005
-#       - RO:0015002 some CL:0011005
-#     label: GABAergic
+  - classes:
+      - PCL:0010001
+    label: Cell_cluster
+  - classes:
+      - sc:Dataset
+    label: Dataset
 
 
 curie_map:
@@ -70,6 +72,7 @@ curie_map:
   EFO: http://www.ebi.ac.uk/efo/EFO_
   foaf: http://xmlns.com/foaf/0.1/
   doap: http://usefulinc.com/ns/doap#
+  sc: https://schema.org/
   
 
 
