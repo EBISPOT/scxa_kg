@@ -115,6 +115,15 @@ services:
       - obask-updatesolr
     links:
       - solr
+  scxa-kg-api:
+    build:
+      context: ./api
+      dockerfile: api.Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0
+    ports:
+      - 8000:8000
+    depends_on:
+      - obask-kb
 volumes:
   obask_data:
   solr_data:
