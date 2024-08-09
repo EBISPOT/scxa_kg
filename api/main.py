@@ -1,21 +1,28 @@
-from fastapi import FastAPI
-from neo4j import GraphDatabase
+from fastapi import Depends, FastAPI
+
+from .settings import Neo4jConnection, get_neo4j_conn
 
 app = FastAPI()
-graph = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "password"))
 
 
-@app.get("/dataset-by-cell/{cell_id}")
-def get_dataset_by_cell(cell_id: str):
+@app.get("/dataset-by-cell/{cell_label}")
+def get_dataset_by_cell(
+    cell_label: str,
+    conn: Neo4jConnection = Depends(get_neo4j_conn)
+):
     """
     Query Neo4j to get dataset information based on cell ID
     """
     query = (
-        f"MATCH (c:Cell {{id: '{cell_id}'}})-[:BELONGS_TO]->(d:Dataset) RETURN d"
+        f"""
+        MATCH (c)-[:SUBCLASSOF*0..]->(d) WHERE d.label = '{cell_label}'
+        MATCH p=(ds)-[:has_source]-(n:Cell_cluster)-[:composed_primarily_of]->(c:Class:Cell) 
+        RETURN distinct n.label as author_annotion, c.label as CL_annotation, ds.download_link[0], ds.title[0], ds.publication[0]
+        """
     )
-    result = graph.run(query).data()
+    result = conn.run_cypher_query(query)
 
     if result:
-        return result[0]['d']
+        return result
 
     return {"message": "Dataset not found for the given cell ID"}
